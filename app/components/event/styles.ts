@@ -10,7 +10,7 @@ export const EventWrapp = styled.div`
 export const ContentWrapp = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
 `;
 
 export const FlexWrapp = styled.div`

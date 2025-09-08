@@ -1,20 +1,26 @@
 import { DefaultButton } from "@/app/shared/ui/default-button";
 import { DefaultInput } from "@/app/shared/ui/default-input";
+import { useNavBar } from "./hooks";
+import { Modal } from "@/app/shared/ui/modal/modal";
 import * as S from "./styles";
 
 export default function NavBar() {
+  const { openModal, handleModalClose, handleModalOpen } = useNavBar();
+
   return (
     <S.NavBarWrapp>
       <S.FlexWrapp>
         <S.ButtonGroup>
-          <DefaultButton>All</DefaultButton>
-          <DefaultButton>Upcoming</DefaultButton>
+          <DefaultButton action={() => null}>All</DefaultButton>
+          <DefaultButton action={() => null}>Upcoming</DefaultButton>
         </S.ButtonGroup>
 
         <DefaultInput withIcon />
       </S.FlexWrapp>
 
-      <DefaultButton>Create event</DefaultButton>
+      <DefaultButton action={handleModalOpen}>Create event</DefaultButton>
+
+      {openModal && <Modal close={handleModalClose}>Hello</Modal>}
     </S.NavBarWrapp>
   );
 }
