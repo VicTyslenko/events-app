@@ -1,34 +1,33 @@
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { defaultValues } from "./data";
 import { DefaultButton } from "@/app/shared/ui/default-button";
 import toast from "react-hot-toast";
 import { DefaultInput } from "@/app/shared/ui/default-input";
-
-import { useMain } from "../main/hooks";
+import { createEventThunk } from "@/app/store/slices/events.slice";
 import { createEvent } from "@/app/lib/api/events";
 import { zodResolver } from "@hookform/resolvers/zod";
-// import type { FormProps } from "./models";
 import type { FormProps } from "./models";
 import { addEventValidatiion } from "./validation";
 import type { NewEventProps } from "./models";
+import { useDispatch } from "react-redux";
+import { type AppDispatch } from "@/app/store/store";
 
 import * as S from "./styles";
 
 export const NewEvent = ({ onClose }: NewEventProps) => {
-  const { register, handleSubmit, watch, formState, setError, control, setValue } = useForm<FormProps>({
+  const dispatch = useDispatch<AppDispatch>();
+
+  const { register, handleSubmit, formState } = useForm<FormProps>({
     resolver: zodResolver(addEventValidatiion),
     defaultValues,
   });
   const { errors } = formState;
-  const { refreshEvents } = useMain();
 
   const handleFormSubmit = async (values: FormProps) => {
     try {
-      await createEvent(values);
-      console.log(values);
+      dispatch(createEventThunk(values));
       toast.success("New event successfully added!");
-      // onClose();
-      refreshEvents();
+      onClose();
     } catch (error) {
       console.log(error);
     }

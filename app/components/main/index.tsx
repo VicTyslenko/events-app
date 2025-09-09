@@ -6,13 +6,12 @@ import { EventList } from "@/app/components/event-list";
 import * as S from "./styles";
 
 export default function Main() {
-  const { allEvents } = useMain();
-  console.log("all events", allEvents);
+  const { events, handleSearch } = useMain();
   return (
     <S.MainContainer>
       <S.InnerContent>
-        <NavBar />
-        <EventList events={allEvents} />
+        <NavBar onChange={handleSearch} />
+        <EventList events={events} />
       </S.InnerContent>
     </S.MainContainer>
   );

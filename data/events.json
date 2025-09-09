@@ -1,34 +1,29 @@
 [
   {
-    "id": 1,
     "title": "Tech Conference 2025 🎤",
     "description": "A conference about the latest in technology trends and innovations.",
     "date": "2025-09-20",
     "location": "NEW YORK"
   },
   {
-    "id": 2,
     "title": "Music Festival 🎶",
     "description": "A three-day outdoor music festival featuring international artists.",
     "date": "2025-10-05",
     "location": "LOS ANGELES"
   },
   {
-    "id": 3,
     "title": "Startup Meetup 🚀",
     "description": "Networking event for entrepreneurs and investors.",
     "date": "2025-09-15",
     "location": "SAN FRANCISCO"
   },
   {
-    "id": 4,
     "title": "Art Expo 🎨",
     "description": "An exhibition of contemporary art from emerging artists.",
     "date": "2025-11-01",
     "location": "CHICAGO"
   },
   {
-    "id": 5,
     "title": "Book Fair 📚",
     "description": "Annual fair showcasing books from publishers worldwide.",
     "date": "2025-12-12",

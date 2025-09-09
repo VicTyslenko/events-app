@@ -6,7 +6,10 @@ import { Modal } from "@/app/shared/ui/modal/modal";
 
 import * as S from "./styles";
 
-export default function NavBar() {
+type Props = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+export default function NavBar({ onChange }: Props) {
   const { openModal, handleModalClose, handleModalOpen } = useNavBar();
 
   return (
@@ -17,7 +20,7 @@ export default function NavBar() {
           <DefaultButton action={() => null}>Upcoming</DefaultButton>
         </S.ButtonGroup>
 
-        <DefaultInput withIcon />
+        <DefaultInput onChange={onChange} withIcon />
       </S.FlexWrapp>
 
       <DefaultButton action={handleModalOpen}>Create event</DefaultButton>
