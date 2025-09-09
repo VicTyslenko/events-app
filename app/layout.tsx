@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StoreProvider>{children}</StoreProvider>
 
-        <Toaster position="top-right" />
+        <Toaster position="top-center" />
       </body>
     </html>
   );

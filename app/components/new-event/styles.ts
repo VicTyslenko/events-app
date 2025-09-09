@@ -4,10 +4,6 @@ export const Wrapper = styled.div`
   height: auto;
   min-width: 500px;
   padding: 20px;
-
-  & .default-button {
-    background-color: transparent;
-  }
 `;
 
 export const Form = styled.form`
@@ -29,10 +25,7 @@ export const Content = styled.div`
   }
 
   & .close-button {
-    padding: 0;
     background-color: transparent;
-    color: black;
-    min-width: auto;
   }
 
   & .buttons-group {
@@ -73,5 +66,5 @@ export const FlexWrapp = styled.div`
 export const ButtonsWrapp = styled.div`
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 21px;
 `;

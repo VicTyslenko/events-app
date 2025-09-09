@@ -39,7 +39,7 @@ export const NewEvent = ({ onClose }: NewEventProps) => {
           <S.HeaderWrapp>
             <S.Header>Add event</S.Header>
 
-            <DefaultButton action={onClose}>X</DefaultButton>
+            <DefaultButton className="close-button" action={onClose}>X</DefaultButton>
           </S.HeaderWrapp>
 
           <S.Label>Event title</S.Label>
@@ -56,7 +56,7 @@ export const NewEvent = ({ onClose }: NewEventProps) => {
           <DefaultInput placeholder="Type date" {...register("date")} />
           {errors.date && <S.ErrorMessage>{errors.date.message}</S.ErrorMessage>}
           <S.ButtonsWrapp>
-            <DefaultButton action={() => null}>Cancel</DefaultButton>
+            <DefaultButton action={onClose}>Cancel</DefaultButton>
 
             <DefaultButton action={() => null} type="submit">
               Save

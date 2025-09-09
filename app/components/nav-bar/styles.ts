@@ -15,6 +15,8 @@ export const ButtonGroup = styled.div`
   height: 25px;
   border-radius: 10px;
   display: flex;
+  gap:10px;
+  margin-right: 40px;
 `;
 
 export const FlexWrapp = styled.div`
