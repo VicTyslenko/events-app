@@ -1,6 +1,6 @@
 export type FormProps = {
   title: string;
-  description: string;
+  description?: string;
   location: string;
   date: string;
 };

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   padding: 20px;
 
   & .default-button {
-    background-color: transparent
+    background-color: transparent;
   }
 `;
 
@@ -68,4 +68,10 @@ export const FlexWrapp = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const ButtonsWrapp = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 `;

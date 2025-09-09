@@ -10,3 +10,8 @@ export async function getEvents(): Promise<EventsProps[]> {
   }
   return res.json();
 }
+
+export async function createEvent() {
+
+  
+}
