@@ -3,6 +3,9 @@ import { defaultValues } from "./data";
 import { DefaultButton } from "@/app/shared/ui/default-button";
 import toast from "react-hot-toast";
 import { DefaultInput } from "@/app/shared/ui/default-input";
+
+import { useMain } from "../main/hooks";
+import { createEvent } from "@/app/lib/api/events";
 import { zodResolver } from "@hookform/resolvers/zod";
 // import type { FormProps } from "./models";
 import type { FormProps } from "./models";
@@ -17,12 +20,15 @@ export const NewEvent = ({ onClose }: NewEventProps) => {
     defaultValues,
   });
   const { errors } = formState;
+  const { refreshEvents } = useMain();
 
   const handleFormSubmit = async (values: FormProps) => {
     try {
-      // await fetchAddUser(values);
+      await createEvent(values);
       console.log(values);
-      // toast.success("New event successfully added!");
+      toast.success("New event successfully added!");
+      // onClose();
+      refreshEvents();
     } catch (error) {
       console.log(error);
     }

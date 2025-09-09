@@ -1,11 +1,10 @@
 import * as S from "./styles";
-import type { EventsProps } from "./models";
+import type { EventProps } from "./models";
 import { Event } from "../event";
 
+export const EventList = ({ events }: { events: EventProps[] }) => {
 
-export const EventList = ({ events }: EventsProps) => {
-
-
+  
   return (
     <S.EventListWrapp>
       {events.map((event) => (

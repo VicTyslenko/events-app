@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
-import { getEvents } from "@/app/lib/api/events";
-import type { EventProps } from "@/app/components/event-list/models";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEvents } from "@/app/store/slices/events.slice";
+import { RootState } from "@/app/store/store";
+import { AppDispatch } from "@/app/store/store";
 
 export const useMain = () => {
-  const [allEvents, setAllEvents] = useState<EventProps[]>([]);
+  const data = useSelector((state: RootState) => state.events);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    getEvents().then(setAllEvents);
+    dispatch(fetchEvents());
   }, []);
-
+  const allEvents = data.events;
   return { allEvents };
 };
