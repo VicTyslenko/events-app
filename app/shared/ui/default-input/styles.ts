@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const InputWrapp = styled.div`
   position: relative;
-  width: fit-content;
-  height: 25px;
+  /* width: fit-content; */
+  height: 30px;
   min-width: 200px;
   & input {
     background-color: white;

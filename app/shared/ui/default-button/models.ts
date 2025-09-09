@@ -1,9 +1,9 @@
-import type React from "react";
-import { CSSProperties } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-export type DefaultButtonProps = {
-  active?: boolean;
-  children: React.ReactNode;
+export interface DefaultButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  type?: HTMLButtonElement["type"];
   action: () => void;
-  // styles: CSSProperties;
-};
+  active?: boolean;
+  // disabled?: boolean;
+}

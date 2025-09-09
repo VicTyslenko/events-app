@@ -10,6 +10,6 @@ export const Button = styled.button<Props>`
   justify-content: center;
   align-items: center;
   color: black;
-  height: 25px;
+  height: 30px;
   border: none;
 `;

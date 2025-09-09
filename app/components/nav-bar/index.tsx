@@ -1,7 +1,9 @@
 import { DefaultButton } from "@/app/shared/ui/default-button";
 import { DefaultInput } from "@/app/shared/ui/default-input";
 import { useNavBar } from "./hooks";
+import { NewEvent } from "../new-event";
 import { Modal } from "@/app/shared/ui/modal/modal";
+
 import * as S from "./styles";
 
 export default function NavBar() {
@@ -20,7 +22,11 @@ export default function NavBar() {
 
       <DefaultButton action={handleModalOpen}>Create event</DefaultButton>
 
-      {openModal && <Modal close={handleModalClose}>Hello</Modal>}
+      {openModal && (
+        <Modal close={handleModalClose}>
+          <NewEvent onClose={handleModalClose} />
+        </Modal>
+      )}
     </S.NavBarWrapp>
   );
 }
