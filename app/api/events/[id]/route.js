@@ -10,6 +10,6 @@ export async function GET(_, { params }) {
   if (!event) {
     return NextResponse.json({ error: "Event not found" }, { status: 404 });
   }
-
+//redeploy
   return NextResponse.json(event);
 }
