@@ -7,9 +7,7 @@ interface EventDetailPageProps {
 }
 
 export default async function EventDetailPage({ params }: EventDetailPageProps) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${params.id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events/${params.id}`, {});
   const event = await res.json();
 
   return (
