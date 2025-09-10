@@ -2,9 +2,14 @@ import * as S from "./styles";
 import type { EventProps } from "@/app/components/event-list/models";
 import { DateDisplay } from "./extensions/date-display";
 
-export const Event = ({ title, description, date }: EventProps) => {
+export const Event = ({ title, description, date, id }: EventProps) => {
+  const handleClick = () => {
+  console.log(id)
+  };
+
+
   return (
-    <S.EventWrapp>
+    <S.EventWrapp onClick={handleClick}>
       <S.FlexWrapp>
         <DateDisplay date={date} />
         <S.ContentWrapp>

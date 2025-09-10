@@ -38,7 +38,6 @@ export const NewEvent = () => {
   return (
     <S.Wrapper>
       <S.Form onSubmit={handleSubmit(handleFormSubmit)}>
-        <S.Content>
           <S.HeaderWrapp>
             <S.Header>Add event</S.Header>
 
@@ -65,7 +64,6 @@ export const NewEvent = () => {
               Create
             </DefaultButton>
           </S.ButtonsWrapp>
-        </S.Content>
       </S.Form>
     </S.Wrapper>
   );
