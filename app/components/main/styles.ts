@@ -14,3 +14,9 @@ export const InnerContent = styled.div`
   flex-direction: column;
   gap: 20px;
 `;
+
+export const EmptyMessage = styled.span`
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b7280;
+`;

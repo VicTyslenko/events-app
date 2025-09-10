@@ -36,7 +36,7 @@ export const Title = styled.h2`
   margin: 0;
 `;
 
-export const Description = styled.p`
+export const Location = styled.p`
   font-size: 14px;
   color: #666;
   line-height: 1.4;

@@ -23,7 +23,6 @@ export const Form = styled.form`
   min-height: 460px;
   flex-direction: column;
   justify-content: space-around;
-  gap: 16px;
 `;
 
 export const Content = styled.div``;

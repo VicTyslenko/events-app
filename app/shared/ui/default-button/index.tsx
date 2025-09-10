@@ -1,3 +1,4 @@
+'use client'
 import type { DefaultButtonProps } from "./models";
 import { Button } from "./styles";
 

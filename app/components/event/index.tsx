@@ -1,12 +1,15 @@
 import * as S from "./styles";
 import type { EventProps } from "@/app/components/event-list/models";
 import { DateDisplay } from "./extensions/date-display";
+import { useRouter } from "next/navigation";
 
-export const Event = ({ title, description, date, id }: EventProps) => {
+export const Event = ({ title, location, date, id }: EventProps) => {
+  const router = useRouter();
+
   const handleClick = () => {
-  console.log(id)
+    console.log(id);
+    router.push(`/event/${id}`);
   };
-
 
   return (
     <S.EventWrapp onClick={handleClick}>
@@ -14,7 +17,7 @@ export const Event = ({ title, description, date, id }: EventProps) => {
         <DateDisplay date={date} />
         <S.ContentWrapp>
           <S.Title>{title}</S.Title>
-          <S.Description>{description}</S.Description>
+          <S.Location>{location}</S.Location>
         </S.ContentWrapp>
       </S.FlexWrapp>
     </S.EventWrapp>
