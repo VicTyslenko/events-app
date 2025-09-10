@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   height: auto;
-  min-width: 500px;
+  min-width: 700px;
   padding: 20px;
 `;
 
-export const Form = styled.form`
-  height: 100%;
-`;
+export const Form = styled.form``;
 
 export const Content = styled.div`
   display: flex;
@@ -24,8 +22,9 @@ export const Content = styled.div`
     color: #292e33;
   }
 
-  & .close-button {
-    background-color: transparent;
+  & .back-button {
+    position: absolute;
+    left: 60px;
   }
 
   & .buttons-group {

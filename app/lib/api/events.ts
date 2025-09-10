@@ -1,4 +1,4 @@
-import { FormProps } from "@/app/components/new-event/models";
+import { FormProps } from "@/app/create/new-event/models";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "";
 import { EventProps } from "@/app/components/event-list/models";
 

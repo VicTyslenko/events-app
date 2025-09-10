@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import { getEvents, createEvent } from "@/app/lib/api/events"; // adjust path
-import type { FormProps } from "@/app/components/new-event/models";
+import type { FormProps } from "@/app/create/new-event/models";
 import type { EventProps } from "@/app/components/event-list/models";
 
 interface EventsState {

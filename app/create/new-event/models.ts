@@ -4,7 +4,3 @@ export type FormProps = {
   location: string;
   date: string;
 };
-
-export type NewEventProps = {
-  onClose: () => void;
-};

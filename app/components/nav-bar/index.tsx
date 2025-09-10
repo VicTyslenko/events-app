@@ -1,8 +1,6 @@
 import { DefaultButton } from "@/app/shared/ui/default-button";
 import { DefaultInput } from "@/app/shared/ui/default-input";
-import { useNavBar } from "./hooks";
-import { NewEvent } from "../new-event";
-import { Modal } from "@/app/shared/ui/modal/modal";
+import { useRouter } from "next/navigation";
 
 import * as S from "./styles";
 
@@ -10,7 +8,7 @@ type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 export default function NavBar({ onChange }: Props) {
-  const { openModal, handleModalClose, handleModalOpen } = useNavBar();
+  const router = useRouter();
 
   return (
     <S.NavBarWrapp>
@@ -23,13 +21,13 @@ export default function NavBar({ onChange }: Props) {
         <DefaultInput onChange={onChange} withIcon />
       </S.FlexWrapp>
 
-      <DefaultButton action={handleModalOpen}>Create event</DefaultButton>
+      <DefaultButton action={() => router.push("/create")}>Create event</DefaultButton>
 
-      {openModal && (
+      {/* {openModal && (
         <Modal close={handleModalClose}>
           <NewEvent onClose={handleModalClose} />
         </Modal>
-      )}
+      )} */}
     </S.NavBarWrapp>
   );
 }

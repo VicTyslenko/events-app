@@ -1,20 +1,22 @@
+"use client";
+
 import { useForm } from "react-hook-form";
 import { defaultValues } from "./data";
 import { DefaultButton } from "@/app/shared/ui/default-button";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 import { DefaultInput } from "@/app/shared/ui/default-input";
 import { createEventThunk } from "@/app/store/slices/events.slice";
-import { createEvent } from "@/app/lib/api/events";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { FormProps } from "./models";
 import { addEventValidatiion } from "./validation";
-import type { NewEventProps } from "./models";
 import { useDispatch } from "react-redux";
 import { type AppDispatch } from "@/app/store/store";
+import { IoArrowBack } from "react-icons/io5";
 
 import * as S from "./styles";
 
-export const NewEvent = ({ onClose }: NewEventProps) => {
+export const NewEvent = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const { register, handleSubmit, formState } = useForm<FormProps>({
@@ -22,12 +24,13 @@ export const NewEvent = ({ onClose }: NewEventProps) => {
     defaultValues,
   });
   const { errors } = formState;
+  const router = useRouter();
 
   const handleFormSubmit = async (values: FormProps) => {
     try {
-      dispatch(createEventThunk(values));
+      dispatch(createEventThunk(values)).unwrap();
       toast.success("New event successfully added!");
-      onClose();
+      router.push("/");
     } catch (error) {
       console.log(error);
     }
@@ -39,7 +42,9 @@ export const NewEvent = ({ onClose }: NewEventProps) => {
           <S.HeaderWrapp>
             <S.Header>Add event</S.Header>
 
-            <DefaultButton className="close-button" action={onClose}>X</DefaultButton>
+            <DefaultButton className="back-button" action={() => router.push("/")}>
+              <IoArrowBack />
+            </DefaultButton>
           </S.HeaderWrapp>
 
           <S.Label>Event title</S.Label>
@@ -56,10 +61,8 @@ export const NewEvent = ({ onClose }: NewEventProps) => {
           <DefaultInput placeholder="Type date" {...register("date")} />
           {errors.date && <S.ErrorMessage>{errors.date.message}</S.ErrorMessage>}
           <S.ButtonsWrapp>
-            <DefaultButton action={onClose}>Cancel</DefaultButton>
-
             <DefaultButton action={() => null} type="submit">
-              Save
+              Create
             </DefaultButton>
           </S.ButtonsWrapp>
         </S.Content>
