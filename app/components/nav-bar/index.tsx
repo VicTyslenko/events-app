@@ -7,6 +7,7 @@ import * as S from "./styles";
 type Props = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
+
 export default function NavBar({ onChange }: Props) {
   const router = useRouter();
 
@@ -22,12 +23,6 @@ export default function NavBar({ onChange }: Props) {
       </S.FlexWrapp>
 
       <DefaultButton action={() => router.push("/create")}>Create event</DefaultButton>
-
-      {/* {openModal && (
-        <Modal close={handleModalClose}>
-          <NewEvent onClose={handleModalClose} />
-        </Modal>
-      )} */}
     </S.NavBarWrapp>
   );
 }

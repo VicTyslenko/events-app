@@ -3,7 +3,7 @@ import type { InputProps } from "./models";
 
 import * as S from "./styles";
 
-export const DefaultInput = ({ withIcon, type = "text", placeholder = "search events", ...props }: InputProps) => {
+export const DefaultInput = ({ withIcon, type = "text", placeholder = "Search by event name...", ...props }: InputProps) => {
   return (
     <S.InputWrapp>
       <input type={type} placeholder={placeholder} {...props} />
