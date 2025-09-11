@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import data from "@/data/events.json";
 // import { type EventProps } from "@/app/components/event-list/models";
 

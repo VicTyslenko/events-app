@@ -1,7 +1,6 @@
 import styled from "styled-components";
 export const ModalOverlay = styled.div`
   z-index: 999;
-
   position: fixed;
   top: 0;
   left: 0;

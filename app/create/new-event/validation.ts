@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 export const addEventValidatiion = z.object({
-  // title: z.string().min(2, "Title must be at least 2 characters").max(50, "Title must be at most 50 characters").trim().nonempty("Title is required"),
   title: z
     .string()
     .min(2, "Title is required")

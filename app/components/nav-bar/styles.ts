@@ -16,7 +16,6 @@ export const NavBarWrapp = styled.div`
     height: 30px;
     padding-top: 2px;
     padding-bottom: 0;
-
     font-size: 14px;
     color: #292e33;
 

@@ -6,5 +6,5 @@ export interface DefaultButtonProps extends HTMLAttributes<HTMLButtonElement> {
   action: () => void;
   active?: boolean;
   className?: string;
-  // disabled?: boolean;
+
 }

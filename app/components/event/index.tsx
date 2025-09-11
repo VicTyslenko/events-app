@@ -7,7 +7,6 @@ export const Event = ({ title, location, date, id }: EventProps) => {
   const router = useRouter();
 
   const handleClick = () => {
-    console.log(id);
     router.push(`/event/${id}`);
   };
 
